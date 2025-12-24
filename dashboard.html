@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student e-Service Dashboard</title>
+  <link rel="icon" type="image/png" href="images/du-favicon.png">
+
+  <!-- Material Icons (same style like screenshot menu icons) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="dashboard.css"/>
+</head>
+
+<body>
+  <!-- TOP APP BAR -->
+  <header class="topbar">
+    <button class="icon-btn" id="btnOpenDrawer" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <div class="topbar-title">
+      শিক্ষার্থী ই-সার্ভিস ব্যবস্থাপনা, ঢাকা বিশ্ববিদ্যালয়
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" aria-label="Search">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+      <button class="chip-btn" type="button" aria-label="Language">
+        <span class="material-symbols-outlined">language</span>
+        <span>BN</span>
+      </button>
+      <button class="icon-btn" aria-label="More">
+        <span class="material-symbols-outlined">more_vert</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- LEFT DRAWER (2nd pic) -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-cover">
+        <div class="du-badge">
+          <div class="du-logo">DU</div>
+          <div class="du-text">
+            <div class="du-name">ঢাকা বিশ্ববিদ্যালয়</div>
+            <div class="du-sub">Student e-Service</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="logout-btn" type="button" id="btnLogout">
+        LOGOUT
+      </button>
+      <div class="drawer-username">Nirob Hasan Nahid</div>
+    </div>
+
+    <nav class="drawer-menu">
+      <button class="menu-item" data-view="notice">
+        <span class="mi material-symbols-outlined">description</span>
+        <span class="label">নোটিশবোর্ড</span>
+        <span class="right material-symbols-outlined">add</span>
+      </button>
+
+      <button class="menu-item active" data-view="apply">
+        <span class="mi material-symbols-outlined">apps</span>
+        <span class="label">আবেদনপত্র</span>
+      </button>
+
+      <button class="menu-item" data-view="profile">
+        <span class="mi material-symbols-outlined">view_list</span>
+        <span class="label">প্রোফাইল</span>
+      </button>
+
+      <button class="menu-item" data-view="academic">
+        <span class="mi material-symbols-outlined">school</span>
+        <span class="label">একাডেমিক রেকর্ড হালনাগাদ</span>
+      </button>
+
+      <button class="menu-item" data-view="form">
+        <span class="mi material-symbols-outlined">assignment</span>
+        <span class="label">তথ্য/যোগাযোগ ফর্ম</span>
+        <span class="right material-symbols-outlined">add</span>
+      </button>
+
+      <button class="menu-item" data-view="result">
+        <span class="mi material-symbols-outlined">refresh</span>
+        <span class="label">ফলাফল</span>
+      </button>
+       <button class="menu-item" data-view="verify">
+  <span class="mi material-symbols-outlined">check_circle</span>
+  <span class="label">যাচাই করুন</span>
+</button>
+
+
+      <button class="menu-item" data-view="result_search">
+        <span class="mi material-symbols-outlined">manage_search</span>
+        <span class="label">ফলাফল অনুসন্ধান</span>
+      </button>
+
+      <button class="menu-item" data-view="verify_fee">
+        <span class="mi material-symbols-outlined">paid</span>
+        <span class="label">যাচাই ফি</span>
+      </button>
+
+      <button class="menu-item" data-view="adjust_fee">
+        <span class="mi material-symbols-outlined">fact_check</span>
+        <span class="label">সমন্বয় ফি</span>
+        <span class="right material-symbols-outlined">add</span>
+      </button>
+
+      <button class="menu-item" data-view="card_grade">
+        <span class="mi material-symbols-outlined">credit_card</span>
+        <span class="label">কার্ড/গ্রেড শীট</span>
+        <span class="right material-symbols-outlined">add</span>
+      </button>
+
+      <button class="menu-item" data-view="fees_all">
+        <span class="mi material-symbols-outlined">receipt_long</span>
+        <span class="label">ফি আদায় (সকল ফি)</span>
+      </button>
+
+      <button class="menu-item" data-view="re_admission">
+        <span class="mi material-symbols-outlined">assignment_return</span>
+        <span class="label">পুনঃভর্তি/একাডেমিক আবেদন</span>
+      </button>
+
+      <button class="menu-item" data-view="syllabus">
+        <span class="mi material-symbols-outlined">menu_book</span>
+        <span class="label">একাডেমিক সিলেবাস</span>
+      </button>
+
+      <button class="menu-item" data-view="teacher">
+        <span class="mi material-symbols-outlined">badge</span>
+        <span class="label">শিক্ষক তথ্য</span>
+      </button>
+
+      <div class="links-title">LINKS</div>
+
+      <a class="link-item" href="https://eco.du.ac.bd" target="_blank" rel="noreferrer">
+        <span class="material-symbols-outlined">arrow_right_alt</span>
+        পরীক্ষা শাখা/শিক্ষা নির্দেশক (eco.du.ac.bd)
+      </a>
+
+      <a class="link-item" href="https://service.du.ac.bd" target="_blank" rel="noreferrer">
+        <span class="material-symbols-outlined">arrow_right_alt</span>
+        সার্ভিস/কর্মকর্তা পোর্টাল (service.du.ac.bd)
+      </a>
+    </nav>
+  </aside>
+
+  <!-- PAGE CONTENT (1st pic layout) -->
+  <main class="page">
+    <div class="container">
+      <!-- LEFT COLUMN (profile + about) -->
+      <section class="left-col">
+        <div class="card profile-card">
+          <div class="profile-top">
+            <div class="avatar-wrap">
+              <div class="avatar-ring">
+                <div class="avatar">
+  <img src="images/profile.jpg" alt="Profile Photo">
+</div>
+
+              </div>
+            </div>
+
+            <div class="profile-name">Nirob Hasan Nahid</div>
+           <div class="profile-info">
+  <div class="pi-row"><span class="pi-lbl">Reg No</span><span class="pi-val"><b>2019811290</b></span></div>
+  <div class="pi-row"><span class="pi-lbl">Reg Year</span><span class="pi-val"><b>1st</b></span></div>
+  <div class="pi-row"><span class="pi-lbl">Class Roll</span><span class="pi-val"><b>200107</b></span></div>
+  <div class="pi-row"><span class="pi-lbl">Session</span><span class="pi-val"><b>2019-2020</b></span></div>
+</div>
+
+          </div>
+        </div>
+
+        <div class="card about-card">
+          <div class="card-title">ABOUT ME</div>
+
+          <div class="about-row">
+            <span class="material-symbols-outlined">work</span>
+            <div class="about-text">
+              <div class="about-label">Program</div>
+              <div class="about-sub">Graduated</div>
+            </div>
+          </div>
+
+          <div class="about-row">
+            <span class="material-symbols-outlined">domain</span>
+            <div class="about-text">
+              <div class="about-label">Department/Institute</div>
+              <div class="about-sub">Department of Electrical and Electronic Engineering (EEE)</div>
+            </div>
+          </div>
+
+          <div class="about-row">
+            <span class="material-symbols-outlined">call</span>
+            <div class="about-text">
+              <div class="about-label">Hall</div>
+              <div class="about-sub">Amar Ekushey Hall</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN (Notice area default) -->
+      <section class="right-col">
+        <div class="card content-card">
+          <div class="tabs">
+            <button class="tab active" data-tab="noticeTab">Notice</button>
+            <button class="tab" data-tab="messageTab">Message</button>
+          </div>
+
+          <div class="tab-panels">
+            <!-- Notice Panel -->
+            <div class="panel active" id="noticeTab">
+              <div class="notice-head">
+                <span class="material-symbols-outlined notice-icon">notifications</span>
+                <span class="notice-title">Notice</span>
+              </div>
+
+              <div class="notice-list">
+                <div class="notice-item">
+                  <span class="material-symbols-outlined chk red">check_box</span>
+                  <div class="notice-text red">
+                    স্নাতক/মাস্টার্স/এমফিল/পিএইচডি প্রোগ্রামের তথ্য হালনাগাদ করতে
+                    “একাডেমিক রেকর্ড” মেনু ব্যবহার করুন।
+                  </div>
+                </div>
+
+                <div class="notice-item">
+                  <span class="material-symbols-outlined chk gray">check_box</span>
+                  <div class="notice-text">
+                    খাত অনুযায়ী ফি এর পরিমাণ জানতে “পে স্লিপ” ডাউনলোড করুন।
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message Panel -->
+            <div class="panel" id="messageTab">
+              <div class="notice-head">
+                <span class="material-symbols-outlined notice-icon">mail</span>
+                <span class="notice-title">Message</span>
+              </div>
+
+              <div class="empty-box">
+                এখনো কোনো মেসেজ নেই।
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

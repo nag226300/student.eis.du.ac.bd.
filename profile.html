@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+
+  <link rel="icon" type="image/png" href="images/du-favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background:#f2f2f2;
+      color:#222;
+    }
+
+    /* TOP BAR */
+    .topbar{
+      height:56px;
+      background:#ff5a22;
+      color:#fff;
+      position:relative;
+    }
+    .back-btn{
+      position:absolute;
+      left:0;
+      top:50%;
+      transform:translateY(-50%);
+      width:56px;
+      height:56px;
+      border:none;
+      background:none;
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .title{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      font-weight:800;
+    }
+
+    .page{
+      max-width:420px;
+      margin:16px auto;
+      padding:0 10px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #ddd;
+      padding:14px;
+      margin-bottom:14px;
+    }
+
+    /* PROFILE PHOTO */
+    .avatar{
+      width:92px;
+      height:92px;
+      border-radius:50%;
+      border:2px solid #ddd;
+      overflow:hidden;
+      margin:0 auto 12px;  /* photo center */
+      background:#fff;
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* ✅ SERIAL INFO (left aligned) */
+    .info{
+      margin-top:6px;
+      font-size:13.5px;
+      line-height:1.9;
+      max-width: 360px;
+      margin-left:auto;
+      margin-right:auto;
+      text-align:left;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns: 140px 1fr; /* label | value */
+      column-gap: 6px;
+    }
+    .lbl{ font-weight:800; color:#222; }
+    .val{ color:#222; }
+
+    /* ABOUT */
+    .about-title{
+      font-weight:900;
+      font-size:14px;
+      margin-bottom:6px;
+    }
+    .about-row{
+      display:flex;
+      gap:12px;
+      padding:10px 0;
+      border-top:1px solid #eee;
+      font-size:13px;
+    }
+    .about-row:first-of-type{ border-top:none; }
+
+    .material-symbols-outlined{
+      font-size:22px;
+      color:#444;
+    }
+    .label{ font-weight:800; }
+    .sub{ color:#555; margin-top:2px; }
+
+    /* ✅ mobile */
+    @media(max-width:420px){
+      .row{ grid-template-columns: 120px 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <div class="title">Profile</div>
+  </div>
+
+  <div class="page">
+
+    <!-- Profile Card -->
+    <div class="card">
+      <div class="avatar">
+        <img src="images/profile.jpg" alt="Profile Photo">
+      </div>
+
+      <!-- ✅ Serial/left aligned -->
+      <div class="info">
+        <div class="row"><div class="lbl">Name</div><div class="val">: Nirob Hasan Nahid</div></div>
+        <div class="row"><div class="lbl">Registration No</div><div class="val">: 2019811290</div></div>
+        <div class="row"><div class="lbl">Class Roll</div><div class="val">: 3063</div></div>
+        <div class="row"><div class="lbl">Session</div><div class="val">: 2019–2020</div></div>
+      </div>
+    </div>
+
+    <!-- About Me -->
+    <div class="card">
+      <div class="about-title">ABOUT ME</div>
+
+      <div class="about-row">
+        <span class="material-symbols-outlined">work</span>
+        <div>
+          <div class="label">Program</div>
+          <div class="sub">Graduated</div>
+        </div>
+      </div>
+
+      <div class="about-row">
+        <span class="material-symbols-outlined">domain</span>
+        <div>
+          <div class="label">Department/Institute</div>
+          <div class="sub">Department of Electrical and Electronic Engineering (EEE)</div>
+        </div>
+      </div>
+
+      <div class="about-row">
+        <span class="material-symbols-outlined">call</span>
+        <div>
+          <div class="label">Hall</div>
+          <div class="sub">Amar Ekushey Hall</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

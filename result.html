@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ফলাফল অনুসন্ধান</title>
+  <link rel="icon" type="image/png" href="images/du-favicon.png">
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f2f2f2;
+    }
+
+    .topbar{
+      height:56px;
+  background:#ff5a22;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  padding:0;                 /* কোন extra gap না */
+  position: relative;
+    }
+
+    .back-btn{
+    position: absolute;
+  left: 0;
+  top: 20%;                  /* 🔥 মাঝখানে নেওয়ার key */
+  transform: translateY(-50%); /* 🔥 exact vertical center */
+  width: 56px;
+  height: 56px;
+  border:none;
+  background:none;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+    }
+
+    .container{
+      max-width:600px;
+      margin:20px auto;
+      background:#fff;
+      padding:16px;
+      border:1px solid #ddd;
+    }
+
+    h2{
+      margin-top:0;
+      font-size:18px;
+    }
+
+    label{
+      display:block;
+      margin-top:14px;
+      font-weight:bold;
+    }
+
+    input, select{
+       width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+
+  box-sizing: border-box;
+    }
+
+    button{
+      margin-top:18px;
+      width:100%;
+      padding:10px;
+      background:#ff5a22;
+      border:none;
+      color:#fff;
+      font-size:15px;
+      cursor:pointer;
+    }
+
+    .error{
+      margin-top:12px;
+      color:red;
+      font-weight:bold;
+      display:none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+  <button class="back-btn" onclick="history.back()">←</button>
+</div>
+
+
+  <div class="container">
+    <h2>ফলাফল অনুসন্ধান</h2>
+
+    <label>Registration Number</label>
+    <input type="text" id="reg">
+
+    <label>Session</label>
+    <select id="session">
+      <option value="">-- Select Session --</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+    </select>
+
+    <button onclick="searchResult()">Search Result</button>
+
+    <div class="error" id="error">❌ Result Not Found</div>
+  </div>
+
+  <script>
+    function searchResult(){
+      const reg = document.getElementById("reg").value.trim();
+      const session = document.getElementById("session").value;
+      const error = document.getElementById("error");
+
+      error.style.display = "none";
+
+      // ✅ exact condition
+      if (reg === "2019811290" && session === "2019") {
+        window.location.href = "show.html";
+      } else {
+        error.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

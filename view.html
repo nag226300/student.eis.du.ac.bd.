@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verification View</title>
+<link rel="icon" type="image/png" href="images/du-favicon.png">
+  <style>
+    :root{
+      --orange:#ff5a22;
+      --bg:#efefef;
+      --card:#ffffff;
+      --line:#e6e6e6;
+      --text:#1f1f1f;
+      --muted:#555;
+      --ok:#1e8e3e;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, Helvetica, sans-serif; /* ✅ real/official font */
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* TOPBAR (back left corner centered) */
+    .topbar{
+      height:56px;
+      background: var(--orange);
+      color:#fff;
+      position: relative;
+    }
+    .back-btn{
+      position:absolute;
+      left:0;
+      top:50%;
+      transform:translateY(-50%);
+      width:56px;
+      height:56px;
+      border:none;
+      background:none;
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .title{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .wrap{
+      max-width: 640px;
+      margin: 18px auto;
+      padding: 0 12px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid #dcdcdc;
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    }
+
+    .table{
+      width:100%;
+      border-collapse: collapse;
+    }
+
+    .table th, .table td{
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    .table thead th{
+      font-size: 16px;
+      font-weight: 900;
+      color:#222;
+      background:#fff;
+    }
+
+    .table thead th:first-child{
+      text-align:left;
+    }
+    .table thead th:last-child{
+      text-align:left;
+    }
+
+    .field{
+      width: 45%;
+      font-weight: 700;
+      color:#222;
+      font-size: 15px;
+    }
+
+    .detail{
+      width: 55%;
+      color:#222;
+      font-size: 15px;
+    }
+
+    .muted{ color: var(--muted); font-weight:600; }
+
+    .status{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+    }
+
+    .check{
+      width:22px;
+      height:22px;
+      border-radius:4px;
+      background: var(--ok);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .footer-actions{
+      padding: 14px 18px;
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+    }
+
+    .btn{
+      border:1px solid #ddd;
+      background:#fff;
+      padding:10px 14px;
+      border-radius:6px;
+      cursor:pointer;
+      font-weight:800;
+    }
+    .btn.primary{
+      background: var(--orange);
+      color:#fff;
+      border-color: var(--orange);
+    }
+
+    @media (max-width: 420px){
+      .table th, .table td{ padding: 14px 12px; }
+      .field, .detail{ font-size: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <div class="title">যাচাই বিবরণ</div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="field">Student Name</td>
+            <td class="detail muted">Nirob Hasan Nahid</td>
+          </tr>
+
+          <tr>
+            <td class="field">Father’s Name</td>
+            <td class="detail muted">MD.Tofazzal Hossain</td>
+          </tr>
+
+          <tr>
+            <td class="field">Mother's Name</td>
+            <td class="detail muted">Nazma Khatun</td>
+          </tr>
+
+          <tr>
+            <td class="field">Department</td>
+            <td class="detail">Electrical and Electronic Engineering (EEE)</td>
+          </tr>
+
+          <tr>
+            <td class="field">Roll Number</td>
+            <td class="detail muted">200107</td>
+          </tr>
+
+          <tr>
+            <td class="field">Registration Number</td>
+            <td class="detail">2019811290</td>
+          </tr>
+
+          <tr>
+            <td class="field">Session</td>
+            <td class="detail">2019–2020</td>
+          </tr>
+
+          <tr>
+            <td class="field">Exam Type</td>
+            <td class="detail">Degree Completed</td>
+          </tr>
+
+          <tr>
+            <td class="field">Status</td>
+            <td class="detail">
+              <div class="status">
+                <span>Verified</span>
+                <span class="check">✓</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- OPTIONAL: transcript page (show.html) link -->
+      <div class="footer-actions">
+        <button class="btn" onclick="history.back()">Back</button>
+        <button class="btn primary" onclick="location.href='show.html'">View Result Sheet</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

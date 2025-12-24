@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>যাচাই করুন</title>
+<link rel="icon" type="image/png" href="images/du-favicon.png">
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f2f2f2;
+      color:#222;
+    }
+
+    /* TOPBAR (back = left edge like screenshot) */
+    .topbar{
+      height:56px;
+      background:#ff5a22;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      padding:0;
+      position:relative;
+    }
+    .back-btn{
+      border:none;
+      background:none;
+      color:#fff;
+      font-size:22px;
+      cursor:pointer;
+      padding:0 14px; /* only icon padding */
+    }
+    .title{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      font-weight:700;
+      text-align:center;
+    }
+
+    .page{
+      max-width:520px;
+      margin:16px auto;
+      padding:0 10px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid #ddd;
+      padding:14px;
+    }
+
+    h2{
+      margin:0 0 12px;
+      font-size:18px;
+      font-weight:800;
+    }
+
+    label{
+      display:block;
+      margin-top:14px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    input, select{
+      width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+
+  box-sizing: border-box;   /* 🔥 এই লাইনে সব ঠিক হবে */
+    }
+
+    .btn{
+      margin-top:18px;
+      width:100%;
+      padding:11px;
+      background:#ff5a22;
+      border:none;
+      color:#fff;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .msg{
+      margin-top:12px;
+      padding:10px;
+      border:1px solid #ffd0d0;
+      background:#fff5f5;
+      color:#c62828;
+      font-weight:800;
+      display:none;
+    }
+
+    .hint{
+      margin-top:10px;
+      font-size:12.5px;
+      color:#666;
+      line-height:1.4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <div class="title">যাচাই করুন</div>
+  </div>
+
+  <div class="page">
+    <div class="card">
+      <h2>যাচাই করুন</h2>
+
+      <label>Registration Number</label>
+      <input id="reg" type="text" />
+
+      <label>Session</label>
+      <select id="session">
+        <option value="">-- Select Session --</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+
+      <button class="btn" id="btnVerify">যাচাই করুন</button>
+
+      <div class="msg" id="msgNotFound">❌ Not Found</div>
+
+      <div class="hint">
+        UNIVERSITY <b> OF</b> DHAKA <b></b>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const regEl = document.getElementById("reg");
+  const sessionEl = document.getElementById("session");
+  const msgNotFound = document.getElementById("msgNotFound");
+  const btnVerify = document.getElementById("btnVerify");
+
+  function verifyNow(){
+    const reg = regEl.value.trim();
+    const session = sessionEl.value;
+
+    msgNotFound.style.display = "none";
+
+    // ✅ Your exact condition:
+    if (reg === "2019811290" && session === "2019") {
+      window.location.href = "view.html";   // 🔥 changed
+    } else {
+      msgNotFound.style.display = "block";
+    }
+  }
+
+  btnVerify.addEventListener("click", verifyNow);
+  regEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") verifyNow();
+  });
+</script>
+
+</body>
+</html>

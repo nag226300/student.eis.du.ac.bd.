@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The University Of Dhaka</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="images/du-favicon.png">
+</head>
+<body>
+  <!-- Top App Bar -->
+  <header class="appbar">
+    <button class="icon-btn" aria-label="Menu">
+      <!-- hamburger -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="appbar-title" title="STUDENT E-SERVICE MANAGEMENT">
+      STUDENT E-SERVICE MANA...
+    </div>
+
+    <button class="icon-btn" aria-label="Swap">
+      <!-- swap vertical icon -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 7l-3 3 3 3M16 17l3-3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 10h10a2 2 0 0 1 2 2v0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M18 14H8a2 2 0 0 1-2-2v0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Page Background Area -->
+  <main class="page">
+    <div class="page-inner">
+      <div class="page-heading">Login Form</div>
+
+      <section class="card" role="region" aria-label="Login Card">
+        <h2 class="card-title">Login</h2>
+
+        <!-- ✅ শুধু এখানে id="loginForm" যোগ -->
+        <form id="loginForm" class="form" action="#" method="post" autocomplete="on">
+          <!-- Registration -->
+          <label class="field">
+            <span class="label">Registration No.</span>
+            <span class="input-wrap">
+              <span class="left-icon" aria-hidden="true">
+                <!-- list icon -->
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 7h14M6 12h14M6 17h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 7h0M4 12h0M4 17h0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <!-- ✅ শুধু এখানে id="reg" যোগ -->
+              <input id="reg" type="text" name="reg" placeholder="Please give your Registration Number" required />
+            </span>
+          </label>
+
+          <!-- Password -->
+          <label class="field">
+            <span class="label">Password</span>
+            <span class="input-wrap">
+              <span class="left-icon" aria-hidden="true">
+                <!-- list icon -->
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 7h14M6 12h14M6 17h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 7h0M4 12h0M4 17h0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <!-- ✅ শুধু এখানে id="password" যোগ -->
+              <input id="password" type="password" name="password" placeholder="Please give your chosen Password" required />
+            </span>
+          </label>
+
+          <!-- Captcha UI (Design only) -->
+        
+          <!-- /Captcha -->
+
+          <!-- Actions Row -->
+          <div class="actions">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              <span>Remember Me</span>
+            </label>
+
+            <button class="btn-login" type="submit">LOGIN</button>
+          </div>
+
+          <!-- Bottom links -->
+          <div class="links">
+            <a href="#" class="link">Register Now!</a>
+            <a href="#" class="link">Forgot Password?</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- ✅ শুধু এই script add -->
+  <script src="script.js"></script>
+</body>
+</html>
